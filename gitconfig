@@ -1,0 +1,14 @@
+[user]
+  name = Connor McKelvey
+  email = connormckelvey@gmail.com
+[github]
+  user = connormckelvey
+[init]
+  templatedir = ~/.git_template
+[color]
+  ui = true
+[core]
+  excludesfile = ~/.excludes
+  whitespace = trailing-space,space-before-tab
+[commit]
+  template = ~/.gitmessage
