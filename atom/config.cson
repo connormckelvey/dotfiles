@@ -1,0 +1,12 @@
+"*":
+  "exception-reporting":
+    userId: "8b3288ab-a1c5-863f-1593-9c19eead0747"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "atom-material-ui"
+      "afterglow-monokai-syntax"
+    ]
+  editor:
+    invisibles: {}
