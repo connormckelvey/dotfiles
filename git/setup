@@ -1,0 +1,26 @@
+#!/bin/bash -e
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$DIR/../lib/util"
+
+is_installed() {
+	hash git
+}
+
+install() {
+	echo "Git is installed by xcode-select"
+}
+
+is_configured() {
+	readlink ~/.gitconfig
+	readlink ~/.gitmessage
+}
+
+configure() {
+	create_symlink $DIR/gitconfig ~/.gitconfig
+	create_symlink $DIR/gitmessage ~/.gitmessage
+}
+
+update() {
+	echo "Not doing updates..."
+}

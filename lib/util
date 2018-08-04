@@ -1,0 +1,9 @@
+#!/bin/bash
+
+create_symlink() {
+    if [ "$2" ]; then
+        rm "$2" || true
+    fi
+    ln -s "$1" "$2"
+    echo "Created symlink to $1"
+}

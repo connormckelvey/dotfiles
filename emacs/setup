@@ -1,0 +1,28 @@
+#!/bin/bash -e
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$DIR/../lib/util"
+
+is_installed() {
+	test -f ~/.emacs.d/spacemacs.mk
+}
+
+install() {
+	rm -rf ~/.emacs.d
+	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+	cd ~/.emacs.d
+	git checkout -b develop origin/develop
+}
+
+is_configured() {
+	readlink ~/.spacemacs
+}
+
+configure() {
+	create_symlink $DIR/spacemacs ~/.spacemacs
+}
+
+update() {
+	cd ~/.emacs.d
+	git pull
+}

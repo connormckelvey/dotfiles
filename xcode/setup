@@ -1,0 +1,21 @@
+#!/bin/bash -e
+
+is_installed() {
+	hash gcc
+}
+
+install() {
+	xcode-select --install
+}
+
+is_configured() {
+	echo "Nothing to configure"
+}
+
+configure() {
+	echo "Nothing to configure"
+}
+
+update() {
+	echo "Not doing updates..."
+}

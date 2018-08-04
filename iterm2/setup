@@ -1,0 +1,28 @@
+#!/bin/bash -e
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$DIR/../lib/util"
+
+is_installed() {
+	brew cask list iterm2
+	test -f "~/Library/Fonts/Sauce Code Powerline Black.otf"
+}
+
+install() {
+	echo "iterm2 is installed by brew"
+	rm -rf ~/.dotfiles/vendor/powerline-fonts
+	git clone https://github.com/powerline/fonts.git ~/.dotfiles/vendor/powerline-fonts
+	bash ~/.dotfiles/vendor/powerline-fonts/install.sh
+}
+
+is_configured() {
+	readlink ~/Library/Preferences/com.googlecode.iterm2.plist
+}
+
+configure() {
+	create_symlink $DIR/iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+}
+
+update() {
+	brew cask upgrade iterm2
+}

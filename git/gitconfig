@@ -1,0 +1,14 @@
+[user]
+  name = Connor McKelvey
+  email = connormckelvey@gmail.com
+[github]
+  user = connormckelvey
+[color]
+  ui = true
+[core]
+  excludesfile = ~/.dotfiles/git/excludes
+  whitespace = trailing-space,space-before-tab
+[commit]
+  template = ~/.gitmessage
+[push]
+	default = matching

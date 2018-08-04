@@ -1,0 +1,46 @@
+#!/bin/bash -e
+
+SETUP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+do_install() {
+	if ! is_installed ; then
+        echo "===== Installing $1... ====="
+		install
+    else
+        echo "===== $1 Already Installed! ====="
+	fi
+    echo ""
+}
+
+do_configure() {
+    if ! is_configured ; then
+        echo "===== Configuring $1... ====="
+        configure
+    else 
+        echo "===== $1 Already Configured! ====="
+    fi
+    echo ""
+}
+
+do_update() {
+    echo "===== Updating $1... ====="
+    update
+    echo ""
+}
+
+setup() {
+    cd "$SETUP_DIR"
+	source "$SETUP_DIR/$1/setup"
+	do_install "$1"
+    do_configure "$1"
+}
+
+setup xcode
+setup git
+setup homebrew
+setup shell
+setup iterm2
+setup tmate
+setup emacs
+
+ls -la ~ | grep "\->"

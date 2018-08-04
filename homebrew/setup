@@ -1,0 +1,24 @@
+#!/bin/bash -e
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+is_installed() {
+	hash brew
+}
+
+install() {
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew bundle install --file $DIR/Brewfile
+}
+
+is_configured() {
+	echo "Nothing to configure"
+}
+
+configure() {
+	echo "Nothing to configure"
+}
+
+update() {
+	brew update
+}

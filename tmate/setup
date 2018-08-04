@@ -1,0 +1,26 @@
+#!/bin/bash
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$DIR/../lib/util"
+
+is_installed() {
+	hash tmate
+	test -d ~/.dotfiles/vendor/tmux-powerline
+}
+
+install() {
+	echo "Tmate is installed by brew"
+	git clone https://github.com/erikw/tmux-powerline.git ~/.dotfiles/vendor/tmux-powerline
+}
+
+is_configured() {
+	readlink ~/.tmux.conf
+}
+
+configure() {
+	create_symlink $DIR/.tmux.conf ~/.tmux.conf
+}
+
+upgrade() {
+	brew upgrade tmate
+}
