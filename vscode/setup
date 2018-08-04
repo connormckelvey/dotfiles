@@ -1,0 +1,28 @@
+#!/bin/bash -e
+
+#!/bin/bash -e
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$DIR/../lib/util"
+
+is_installed() {
+	hash code
+}
+
+install() {
+	echo "vscode is installed by brew"
+}
+
+is_configured() {
+	readlink ~/Library/Application\ Support/Code/User/settings.json
+	readlink ~/Library/Application\ Support/Code/User/keybindings.json
+}
+
+configure() {
+	create_symlink $DIR/settings.json ~/Library/Application\ Support/Code/User/settings.json
+	create_symlink $DIR/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+}
+
+update() {
+	brew cask upgrade visual-studio-code
+}

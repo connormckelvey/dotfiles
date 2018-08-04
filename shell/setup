@@ -5,25 +5,25 @@ source "$DIR/../lib/util"
 
 is_installed() {
 	hash bash
-    test -d ~/.bash_it
+	test -d ~/.bash_it
 }
 
 install() {
 	echo "Not doing install..."
-    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+	git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 }
 
 is_configured() {
 	test "$SHELL" = "/bin/bash"
 	readlink ~/.profile
-    readlink ~/.bashrc
-    readlink ~/.bash_profile
+	readlink ~/.bashrc
+	readlink ~/.bash_profile
 }
 
 configure() {
 	create_symlink $DIR/profile ~/.profile
-    create_symlink $DIR/bashrc ~/.bashrc
-    create_symlink $DIR/bash_profile ~/.bash_profile
+	create_symlink $DIR/bashrc ~/.bashrc
+	create_symlink $DIR/bash_profile ~/.bash_profile
 }
 
 update() {

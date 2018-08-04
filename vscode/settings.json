@@ -1,0 +1,16 @@
+// Place your settings in this file to overwrite the default settings
+{
+  "editor.fontSize": 15,   
+  "editor.insertSpaces": true,
+  "editor.renderIndentGuides": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.tabSize": 2,
+  "files.autoSave": "onFocusChange",
+  "npm.runInTerminal": false,
+  "workbench.editor.showTabs": false,
+  "window.zoomLevel": 0,
+  "editor.wordWrap": "on",
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "workbench.iconTheme": "vs-seti"
+}
