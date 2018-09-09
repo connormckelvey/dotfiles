@@ -8,9 +8,22 @@
   "files.autoSave": "onFocusChange",
   "npm.runInTerminal": false,
   "workbench.editor.showTabs": false,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "editor.wordWrap": "on",
   "editor.minimap.enabled": true,
   "editor.minimap.renderCharacters": false,
-  "workbench.iconTheme": "vs-seti"
+  "workbench.iconTheme": "vs-seti",
+  "editor.rulers": [80],
+  "emmet.includeLanguages":{
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "[elixir]": {
+    "editor.acceptSuggestionOnEnter": "on",
+  }  
 }
